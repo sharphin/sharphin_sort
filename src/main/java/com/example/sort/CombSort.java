@@ -6,13 +6,12 @@ public class CombSort {
         int array[] = new int[arr.length];
         System.arraycopy(arr, 0, array, 0, arr.length);
         long startTime = System.nanoTime();
-        array = sort(array);
+        sort(array);
         long endTime = System.nanoTime();
         System.out.println("comb sort");
         System.out.println("処理時間：" + (endTime - startTime) / 1000000f + "ms swap: "+swapcount);
-        System.out.println("");
     }
-    public static int[] sort(int array[]) {
+    public static void sort(int array[]) {
         int gap = array.length;
         boolean swap = true;
         while(gap !=1 && swap) {
@@ -30,6 +29,5 @@ public class CombSort {
             }
             if(!swap) break;
         }
-        return array;
     }
 }

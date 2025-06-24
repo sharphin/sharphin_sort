@@ -8,12 +8,11 @@ public class ShakerSort {
         System.out.println("shaker sort");
 
         long startTime = System.nanoTime();
-        array = sort(array,0, array.length-2, true);
+        sort(array,0, array.length-2, true);
         long endTime = System.nanoTime();
         System.out.println("処理時間：" + (endTime - startTime) / 1000000f + "ms swap: "+swapcount);
-        System.out.println("");
     }
-    public static int[] sort(int array[], int start, int end,boolean incri) {
+    public static void sort(int array[], int start, int end,boolean incri) {
         boolean swap = false;
         int num = -1;
         if(incri) num = 1;
@@ -26,12 +25,10 @@ public class ShakerSort {
                 array[i+1] = temp;
             }
         }
-        if(!swap) return array;
+        if(!swap) return;
         int temp = start;
         start = end;
         end = temp;
         sort(array,start,end,!incri);
-
-        return array;
     }
 }

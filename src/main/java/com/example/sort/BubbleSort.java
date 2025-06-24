@@ -7,12 +7,11 @@ public class BubbleSort {
         System.arraycopy(arr, 0, array, 0, arr.length);
         System.out.println("bubble sort");
         long startTime = System.nanoTime();
-        array = sort(array);
+        sort(array);
         long endTime = System.nanoTime();
         System.out.println("処理時間：" + (endTime - startTime) / 1000000f + "ms swap: "+swapcount);
-        System.out.println("");
     }
-    public static int[] sort(int array[]) {
+    public static void sort(int array[]) {
         boolean swap = false;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length;j++) {
@@ -26,6 +25,5 @@ public class BubbleSort {
             }
             if(!swap) break;
         }
-        return array;
     }
 }

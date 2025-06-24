@@ -6,16 +6,13 @@ public class QuickSort {
         int array[] = new int[arr.length];
         System.arraycopy(arr, 0, array, 0, arr.length);
         System.out.println("quick sort");
-        //GenRandArray.printArray(array);
         long startTime = System.nanoTime();
-        array = sort(array, 0,array.length-1);
+        sort(array, 0,array.length-1);
         long endTime = System.nanoTime();
-        //GenRandArray.printArray(array);
         System.out.println("処理時間：" + (endTime - startTime) / 1000000f + "ms swap: "+swapcount);
-        System.out.println("");
     }
-    public static int[] sort(int array[], int begin,int end) {
-        if(end-begin < 2) return array;
+    public static void sort(int array[], int begin,int end) {
+        if(end == begin) return;
         int pivot = array[(begin + end) / 2];
         int b = begin;
         int e = end;
@@ -34,8 +31,7 @@ public class QuickSort {
             array[e] = temp;
         }
 
-        sort(array, begin, b - 1);
-        sort(array, e + 1, end);
-        return array;
+        if(begin < e - 1)sort(array, begin, b - 1);
+        if(end > e + 1) sort(array, e + 1, end);
     }
 }

@@ -35,9 +35,9 @@ public class GenRandArray {
         }
         return array;
     }
-    public static void printArray(int array[]) {
-        for (int elem :array) {
-            System.out.print(elem+" ");
+    public static void printArray(int array[], int s, int e) {
+        for (int i = s; i < e; i++) {
+            System.out.print(array[i]+" ");
         }
         System.out.println("");
     }

@@ -11,6 +11,5 @@ public class DefaultSort {
         long endTime = System.nanoTime();
         System.out.println("java Arrays sort");
         System.out.println("処理時間：" + (endTime - startTime) / 1000000f + "ms swap: -1");
-        System.out.println("");
     }
 }
