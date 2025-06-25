@@ -5,11 +5,13 @@ import com.example.sort.BubbleSort;
 import com.example.sort.CombSort;
 import com.example.sort.DefaultSort;
 import com.example.sort.HeapSort;
+import com.example.sort.MergeSort;
 import com.example.sort.QuickSort;
+import com.example.sort.RadixSort;
 import com.example.sort.ShakerSort;
 
 public class App {
-    final int arrayLength = 32;
+    final int arrayLength = 24;
     private int array[];
     public static void main(String[] args) {
         App a = new App();
@@ -24,10 +26,7 @@ public class App {
         ShakerSort ssort = new ShakerSort(array);
         CombSort csort = new CombSort(array);
         HeapSort hsort = new HeapSort(array);
-    }
-    public static void swap(int array[],int i, int j) {
-        int tmp = array[i];
-        array[i] = array[j];
-        array[j] = tmp;
+        MergeSort msort = new MergeSort(array);
+        RadixSort rsort = new RadixSort(array);
     }
 }
